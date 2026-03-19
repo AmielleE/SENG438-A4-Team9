@@ -2,14 +2,14 @@
 
 **Lab. Report \#4 – Mutation Testing and Web app testing**
 
-| Group \#:  9    |    |
-| -------------- | --- |
-| Student Names: |  UCID:   |
-| Josral Frederick          |  30195360   |
-| Amielle El Makhzoumi           | 30175286    |
-| Fatma Alzubaidi               |   30172637  |  
-| Faris Janjua               |  30154612   |  
-| Erioluwa Olubadejo             | 30187041    |  
+| Group \#:  9    |
+| -------------- |
+| Student Names: |
+| Josral Frederick |
+| Amielle El Makhzoumi |
+| Fatma Alzubaidi | 
+| Faris Janjua | 
+| Erioluwa Olubadejo | 
 
 # Introduction
 

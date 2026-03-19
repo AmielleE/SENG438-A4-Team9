@@ -32,17 +32,17 @@
       ],
       "value": ""
     }, {
+      "id": "a5fde523-ddf1-4bb0-9857-1e65e3c87f06",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=cartHeader",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "2995850b-48c6-438d-96b6-153ce094aab9",
       "comment": "",
       "command": "runScript",
       "target": "window.scrollTo(0,249.3333282470703)",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "96543efd-c126-4b39-b0ec-056680a7aca0",
-      "comment": "",
-      "command": "close",
-      "target": "",
       "targets": [],
       "value": ""
     }]
@@ -50,40 +50,47 @@
     "id": "981c29ec-49e0-45fb-9c52-4c30e5ae23c6",
     "name": "changeLanguage",
     "commands": [{
-      "id": "374db4a4-cbc9-4075-996b-fec44b3c796c",
+      "id": "d5aa248b-c328-4b05-81d3-21d55589222d",
       "comment": "",
       "command": "open",
       "target": "https://www.walmart.ca/en",
       "targets": [],
       "value": ""
     }, {
-      "id": "661d0c9c-8725-4a32-b50a-1fa7b2c9d2e6",
+      "id": "9122819d-7a91-47a2-83ad-3664fc5db759",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1232x692",
+      "target": "1232x694",
       "targets": [],
       "value": ""
     }, {
-      "id": "bf7d4bd3-8580-42db-ae9f-eb83d008c43f",
+      "id": "ae9fc268-c285-451e-a909-9aa40040cd38",
       "comment": "",
       "command": "click",
-      "target": "css=.pointer > .ml2 > .b",
+      "target": "css=button.desktop-header-trigger",
       "targets": [
-        ["css=.pointer > .ml2 > .b", "css:finder"],
-        ["xpath=//div[@id='__next']/div/span/header/nav/ul/li/div/button/div/div[2]", "xpath:idRelative"],
-        ["xpath=//li/div/button/div/div[2]", "xpath:position"]
+        ["css=.ml2 > .f7", "css:finder"],
+        ["xpath=//div[@id='__next']/div/span/header/nav/ul/li/div/button/div/div", "xpath:idRelative"],
+        ["xpath=//li/div/button/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "2f1559d2-d2b9-47aa-a5e2-fc0ee00bdda4",
+      "id": "b04e2915-75d0-405a-a1e2-b4e8f6482a15",
       "comment": "",
       "command": "click",
-      "target": "css=.flex:nth-child(2) > .w_h7yu > .w_y2E1",
+      "target": "css=div.absolute.bg-white.br3.br--bottom label.w_h7yu",
       "targets": [
         ["css=.flex:nth-child(2) > .w_h7yu > .w_y2E1", "css:finder"],
         ["xpath=//div[@id='__next']/div/span/header/nav/ul/li/div/div/div/div[2]/label/span", "xpath:idRelative"],
         ["xpath=//div[2]/label/span", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "576f3069-af37-46c2-8b50-28852b6e883c",
+      "comment": "",
+      "command": "assertText",
+      "target": "Rayons",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -107,7 +114,7 @@
       "id": "82987ff5-a160-45b2-8b12-9bb584f7b4c3",
       "comment": "",
       "command": "click",
-      "target": "css=.dn:nth-child(2) > .flex .lh-title",
+      "target": "css=a.desktop-header-trigger",
       "targets": [
         ["css=.dn:nth-child(2) > .flex .lh-title", "css:finder"],
         ["xpath=//div[@id='__next']/div/span/header/nav/ul/li[2]/a/div/div", "xpath:idRelative"],
@@ -128,6 +135,13 @@
         ["xpath=//div/a[2]", "xpath:position"],
         ["xpath=//a[contains(.,'Lists')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "4854fadc-6d6d-47ca-b34f-24ffb07315ea",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Lists",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -172,6 +186,13 @@
         ["xpath=//div/div/div/a", "xpath:position"],
         ["xpath=//a[contains(.,'Sign in or create account')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "c0644442-be15-48e3-a6b9-29cbc20c73ea",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Sign in or create your account",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -239,7 +260,7 @@
       "id": "1b42b56d-b089-47a9-8e5e-d37393065e6c",
       "comment": "",
       "command": "click",
-      "target": "css=#intent-id1 .v-btm",
+      "target": "id=intent-id1",
       "targets": [
         ["css=#intent-id1 .v-btm", "css:finder"],
         ["xpath=//img[@alt='pickup']", "xpath:img"],
@@ -255,28 +276,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "cb892e41-86a4-4c57-8d98-b99e7c7d3c64",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.bw0 > .flex > .flex:nth-child(1)",
-      "targets": [
-        ["css=.bw0 > .flex > .flex:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='gic-wrapper']/div/div[2]/section/div/div/div/div/div/div/div/div/button/div/div", "xpath:idRelative"],
-        ["xpath=//div/div/div/div/button/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "8d208c1b-2de0-45aa-8f4b-7e9df5845819",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.bw0 > .flex > .flex:nth-child(1)",
-      "targets": [
-        ["css=.bw0 > .flex > .flex:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='gic-wrapper']/div/div[2]/section/div/div/div/div/div/div/div/div/button/div/div", "xpath:idRelative"],
-        ["xpath=//div/div/div/div/button/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "c8239340-e182-410c-9b20-1a833e05f2ea",
       "comment": "",
       "command": "click",
@@ -288,7 +287,7 @@
       ],
       "value": ""
     }, {
-      "id": "c93d3405-1503-427d-87b1-32943ed6c96d",
+      "id": "81cdbb22-6aa5-4237-9cae-1ae206b6fa8a",
       "comment": "",
       "command": "click",
       "target": "css=.w_fNeq",
@@ -300,12 +299,30 @@
       ],
       "value": ""
     }, {
+      "id": "5e9eb554-35a0-427f-b4f4-005ff0a8c976",
+      "comment": "",
+      "command": "click",
+      "target": "css=.content-start",
+      "targets": [
+        ["css=.content-start", "css:finder"],
+        ["xpath=//div[@id='intent-banner-section']/button/div/div", "xpath:idRelative"],
+        ["xpath=//button/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
       "id": "16c5f7d4-c0d5-4198-99a9-156a3c9f74fa",
       "comment": "",
       "command": "runScript",
       "target": "window.scrollTo(0,0)",
       "targets": [],
       "value": ""
+    }, {
+      "id": "2f360d9d-908d-476b-acbd-76e5a013ae63",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//button[.//div[contains(@class,'content-start')]]",
+      "targets": [],
+      "value": "Pickup"
     }]
   }],
   "suites": [{
