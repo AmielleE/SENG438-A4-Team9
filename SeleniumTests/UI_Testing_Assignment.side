@@ -1,0 +1,292 @@
+{
+  "id": "0f4dcea6-7ece-4244-b58f-aa8b406ec1e4",
+  "version": "2.0",
+  "name": "UI_Testing_Assignment",
+  "url": "https://www.walmart.ca/en",
+  "tests": [{
+    "id": "56ac9fd8-97c8-405b-a23f-c6c1fd40c51c",
+    "name": "Search_and_open_product",
+    "commands": [{
+      "id": "00ef2774-717d-4df1-8836-a06fa32e4852",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.walmart.ca/en",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bbe28f1-b10a-4efc-9780-a72581e3e686",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "703x692",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8893d1a-2eea-42dc-a8dd-5211c93b6e25",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.right-2",
+      "targets": [
+        ["css=.right-2", "css:finder"],
+        ["xpath=//button[@type='reset']", "xpath:attributes"],
+        ["xpath=//div[@id='__next']/div/span/header/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac2a40dd-b9f5-484a-8792-c0ba0c28f252",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.right-2",
+      "targets": [
+        ["css=.right-2", "css:finder"],
+        ["xpath=//button[@type='reset']", "xpath:attributes"],
+        ["xpath=//div[@id='__next']/div/span/header/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a1959c0-75a5-4186-8f14-bbf8d0e75283",
+      "comment": "",
+      "command": "click",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.search-bar", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//div[@id='__next']/div/span/header/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16d2e4e6-8b3c-4d1e-8711-d4b9d620b152",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.walmart.ca/en/search?q=laptop",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07267a22-174f-4839-99c8-3df1a8c8dc09",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=[data-automation-id=\"product-title\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c0bcdbd2-3b85-432a-90d8-0458690ebded",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=[data-automation-id=\"product-title\"] ",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "9b1eeb9c-4792-4a40-b391-994c6f2cb373",
+      "comment": "",
+      "command": "click",
+      "target": "css=[data-automation-id=\"product-title\"]",
+      "targets": [
+        ["css=.bg-inherit > .ld", "css:finder"],
+        ["xpath=//div[@id='__next']/div/section/div/header/h2/button/i", "xpath:idRelative"],
+        ["xpath=//h2/button/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95007efb-08f2-49a0-8fbe-ee80840e8ca2",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=[data-automation-id=\"add-to-cart\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bf86f80-4522-4865-863b-50e74b3544c2",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,13)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9e0270c-d37e-4238-ac33-1d7cfa0f7cbc",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=RNRUO 15.6\" Laptop Computer, 8GB RAM 256GB SSD, Intel Pentium Gold 6500Y with 2 Cores Up to 3.4GHz, Full HD Display, Office 2024, WiFi5 BT5.0, Window 11 for Business, Student, Pink",
+      "targets": [
+        ["linkText=RNRUO 15.6\" Laptop Computer, 8GB RAM 256GB SSD, Intel Pentium Gold 6500Y with 2 Cores Up to 3.4GHz, Full HD Display, Office 2024, WiFi5 BT5.0, Window 11 for Business, Student, Pink", "linkText"],
+        ["css=.mb0:nth-child(1) .sans-serif > .w-100", "css:finder"],
+        ["xpath=//div[@id='0']/div[2]/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.walmart.ca/wapcrs/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~&pos=1&tax=10003_20038_30548&rdf=1&rd=https%3A%2F%2Fwww.walmart.ca%2Fen%2Fip%2FRNRUO-15-6-Laptop-Computer-8GB-RAM-256GB-SSD-Intel-Pentium-Gold-6500Y-2-Cores-Up-3-4GHz-Full-HD-Display-Office-2024-WiFi5-BT5-0-Window-11-Business-St%2F39BXA5GSMOSP&adUid=b11f4710-4c8c-4428-96c3-a2acf00f6273&mloc=sp-search-middle&pltfm=desktop&pgId=laptop&pt=search&spQs=Pv26gkNNvQTYP7UarsHSDI_C2yojiF3V7ePTtL3eWIzUP71OS_XFSsI2MzG2i7UA9eRl3HADhhtejupYeD0RzpOPO0gBar3YujfwS88DK7Ni56m3EZND9q3UrHLNvjQ6B_ujrvWy_bkRH0fioma790AtbJo9IqlSyVFKmt-8nmBF9ESgqDhJeqrzPW2vT6WFzaYMyT9EyjIpGo_ZSgWaWnyEGTB-dNx1acRjTHjuk6A3ZRMT-DEE4YKu3ALPru_t278TJgAId24vtQ3taxyPgA&storeId=3013&tn=WMT_CA&wtn=qxjed8&bkt=ace1_default%7Cace2_default%7Cace3_default&/en/ip/RNRUO-15-6-Laptop-Computer-8GB-RAM-256GB-SSD-Intel-Pentium-Gold-6500Y-2-Cores-Up-3-4GHz-Full-HD-Display-Office-2024-WiFi5-BT5-0-Window-11-Business-St/39BXA5GSMOSP')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'RNRUO 15.6\" Laptop Computer, 8GB RAM 256GB SSD, Intel Pentium Gold 6500Y with 2 Cores Up to 3.4GHz, Full HD Display, Office 2024, WiFi5 BT5.0, Window 11 for Business, Student, Pink')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c58de006-96e3-4e41-8d4b-8eb95bf5dc3b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=RNRUO 15.6\" Laptop Computer, 8GB RAM 256GB SSD, Intel Pentium Gold 6500Y with 2 Cores Up to 3.4GHz, Full HD Display, Office 2024, WiFi5 BT5.0, Window 11 for Business, Student, Pink",
+      "targets": [
+        ["linkText=RNRUO 15.6\" Laptop Computer, 8GB RAM 256GB SSD, Intel Pentium Gold 6500Y with 2 Cores Up to 3.4GHz, Full HD Display, Office 2024, WiFi5 BT5.0, Window 11 for Business, Student, Pink", "linkText"],
+        ["css=.mb0:nth-child(1) .sans-serif > .w-100", "css:finder"],
+        ["xpath=//div[@id='0']/div[2]/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.walmart.ca/wapcrs/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~&pos=1&tax=10003_20038_30548&rdf=1&rd=https%3A%2F%2Fwww.walmart.ca%2Fen%2Fip%2FRNRUO-15-6-Laptop-Computer-8GB-RAM-256GB-SSD-Intel-Pentium-Gold-6500Y-2-Cores-Up-3-4GHz-Full-HD-Display-Office-2024-WiFi5-BT5-0-Window-11-Business-St%2F39BXA5GSMOSP&adUid=b11f4710-4c8c-4428-96c3-a2acf00f6273&mloc=sp-search-middle&pltfm=desktop&pgId=laptop&pt=search&spQs=Pv26gkNNvQTYP7UarsHSDI_C2yojiF3V7ePTtL3eWIzUP71OS_XFSsI2MzG2i7UA9eRl3HADhhtejupYeD0RzpOPO0gBar3YujfwS88DK7Ni56m3EZND9q3UrHLNvjQ6B_ujrvWy_bkRH0fioma790AtbJo9IqlSyVFKmt-8nmBF9ESgqDhJeqrzPW2vT6WFzaYMyT9EyjIpGo_ZSgWaWnyEGTB-dNx1acRjTHjuk6A3ZRMT-DEE4YKu3ALPru_t278TJgAId24vtQ3taxyPgA&storeId=3013&tn=WMT_CA&wtn=qxjed8&bkt=ace1_default%7Cace2_default%7Cace3_default&/en/ip/RNRUO-15-6-Laptop-Computer-8GB-RAM-256GB-SSD-Intel-Pentium-Gold-6500Y-2-Cores-Up-3-4GHz-Full-HD-Display-Office-2024-WiFi5-BT5-0-Window-11-Business-St/39BXA5GSMOSP')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'RNRUO 15.6\" Laptop Computer, 8GB RAM 256GB SSD, Intel Pentium Gold 6500Y with 2 Cores Up to 3.4GHz, Full HD Display, Office 2024, WiFi5 BT5.0, Window 11 for Business, Student, Pink')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4735acb0-d949-423e-9aca-5e2b91059380",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w_eEg0 > div > span",
+      "targets": [
+        ["css=.w_eEg0 > div > span", "css:finder"],
+        ["xpath=//div[@id='maincontent']/section/main/div[2]/div[2]/div/div[3]/div/div/div/div/section/div/div/div/div/div/div/div/div/button/div/span", "xpath:idRelative"],
+        ["xpath=//button/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca77b201-8020-409e-b35e-a2aeb5265e98",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w_fNeq:nth-child(2)",
+      "targets": [
+        ["css=.w_fNeq:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[85]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div[2]/div/div/div[3]/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Protection Plan - $79.97')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d851fc43-8e33-442f-a2bb-602e2bf6af8e",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95bdfda2-68ab-4bf1-9588-f0005b38f8b6",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.w-third",
+      "targets": [
+        ["css=.w-third", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div/div/div/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": "28.399993896484375,292"
+    }, {
+      "id": "2e13fa14-dcb3-4ff5-b02d-ba9c79d4395c",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.w-third",
+      "targets": [
+        ["css=.w-third", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div/div/div/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": "28.399993896484375,292"
+    }, {
+      "id": "c929c3e3-44b0-4f1c-945c-404cc6e80b81",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.w-third",
+      "targets": [
+        ["css=.w-third", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div/div/div/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": "28.399993896484375,292"
+    }, {
+      "id": "67024442-67a0-4a12-994b-0ec42e9c9ca1",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "800b645c-4a77-43ef-a554-86a0e794caeb",
+    "name": "view_category_Laptops",
+    "commands": [{
+      "id": "c8c343a9-2014-40ba-b392-8ba8c2d6724b",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.walmart.ca/en/browse/electronics/laptops/10002",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "32b653a2-e334-4757-8087-d4cfbd77f8db",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=[data-automation-id=\"product-title\"] ",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "2c7af9b5-3fda-4c84-80d6-f6aa2dd8a221",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=[data-automation-id=\"product-title\"]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "cd23243b-2f49-4610-9ecd-a7b7446fca62",
+    "name": "Invalid_search",
+    "commands": [{
+      "id": "b51c600e-7fed-4eeb-aead-178660717a87",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.walmart.ca/en/search?q=asdfasdfasdf",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc61fc5a-c91c-493c-bdd1-973bc6bdaef2",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=body",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "ba1c855f-0ee3-4621-922a-fe96ee074f20",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1d26e034-4038-4016-91a9-b87fb4de1b57",
+    "name": "Verify_Homepage",
+    "commands": [{
+      "id": "8a31ebc8-2b9b-4874-9b9a-f647bd6bf144",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.walmart.ca/en",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e18e784-37d3-47a6-9519-239817a60ac0",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=body",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "7ec250fd-87ad-4e7b-b533-d672c2de2822",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=body",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4d1ef275-265d-419a-9138-8a7e2a58677f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["56ac9fd8-97c8-405b-a23f-c6c1fd40c51c"]
+  }],
+  "urls": ["https://www.walmart.ca/en"],
+  "plugins": []
+}
