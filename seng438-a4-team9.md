@@ -12,8 +12,9 @@
 | Erioluwa Olubadejo | 
 
 # Introduction
+To assess test quality and user based behaviour, this lab investigates mutation testing and GUI automation. We evaluated the effectiveness of our tests in detecting defects by injecting faults into Range and DataUtilities using PIT. Next, we enhanced the test suites by focusing on the vulnerabilities exposed by the surviving mutants. Simultaneously, realistic user workflows on web applications were automated using Selenium. 
 
-
+Together, these tasks highlight the difference between coverage and actual fault detection.
 # Analysis of 10 Mutants of the Range class 
 
 Mutation testing was performed on the Range class using PIT. A total of 1259 mutants were generated, of which 860 were killed, resulting in a mutation score of 68%.
@@ -130,6 +131,15 @@ Overall, Selenium is great for its speed, reliability, and ability to automate e
 
 # How the team work/effort was divided and managed
 
+Pair 1: Fatma & Amielle focused on selenium test design and automation & verified the mutation testing (analysis, improving test suites) done by pair 2.
+
+Pair 2: Josral, Faris & Erioluwa Josral focused on mutation testing (analysis, improving test suites) & verified the selenium test design and automation performed by pair 1.
+
+The lab report was a group effort curated with the efforts of everyone; it was also reviewed before final submission by the whole group.
 # Difficulties encountered, challenges overcome, and lessons learned
+It was difficult to interpret the mutation results, particularly when it came to separating weak test coverage from equivalent mutants. Instead of just adding more tests, targeted test design was needed to improve mutation scores. We used better locators and waits to fix the timing problems and unstable selectors that caused Selenium scripts to initially fail. 
+
+Additionally, we discovered that not every UI behaviour can be consistently automated. In general, the lab prioritised testing accuracy over cursory coverage.
 
 # Comments/feedback on the lab itself
+The lab successfully highlighted line coverage's shortcomings as a quality metric and encouraged us to create more robust test designs. Although it required a lot of setup and took some time, mutation testing was insightful. We believe some advice on managing dynamic elements would be helpful, Selenium offered hands-on experience. More organised examples would improve the SikuliX comparison testing, which felt less hands-on. All things considered, the lab was difficult but extremely applicable to actual testing procedures.
