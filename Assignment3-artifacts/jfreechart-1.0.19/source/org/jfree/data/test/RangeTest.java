@@ -38,23 +38,22 @@ public class RangeTest {
     void getLowerBound_ShouldReturnLower() {
         assertEquals(-1.0, exampleRange.getLowerBound(), EPS);
     }
+
     @Test
     void getLowerBound_PositiveRange() {
         Range r = new Range(5, 10);
-
         assertEquals(5.0, r.getLowerBound(), EPS);
     }
+
     @Test
     void getLowerBound_NegativeRange() {
         Range r = new Range(-10, -2);
-
         assertEquals(-10.0, r.getLowerBound(), EPS);
     }
 
     @Test
     void getLowerBound_ZeroRange() {
         Range r = new Range(0, 5);
-
         assertEquals(0.0, r.getLowerBound(), EPS);
     }
 
@@ -64,23 +63,22 @@ public class RangeTest {
     void getUpperBound_ShouldReturnUpper() {
         assertEquals(1.0, exampleRange.getUpperBound(), EPS);
     }
+
     @Test
     void getUpperBound_PositiveRange() {
         Range r = new Range(5, 10);
-
         assertEquals(10.0, r.getUpperBound(), EPS);
     }
+
     @Test
     void getUpperBound_NegativeRange() {
         Range r = new Range(-10, -2);
-
         assertEquals(-2.0, r.getUpperBound(), EPS);
     }
 
     @Test
     void getUpperBound_ZeroUpperBound() {
         Range r = new Range(-5, 0);
-
         assertEquals(0.0, r.getUpperBound(), EPS);
     }
 
@@ -96,52 +94,50 @@ public class RangeTest {
         Range r = new Range(5.0, 5.0);
         assertEquals(0.0, r.getLength(), EPS);
     }
+
     @Test
     void getLength_NegativeRange() {
         Range r = new Range(-10, -2);
-
         assertEquals(8.0, r.getLength(), EPS);
     }
+
     @Test
     void getLength_LargeRange() {
         Range r = new Range(-100, 100);
-
         assertEquals(200.0, r.getLength(), EPS);
     }
+
     @Test
     void getters_WithDifferentRange() {
         Range r = new Range(10, 20);
-
         assertEquals(10.0, r.getLowerBound(), EPS);
         assertEquals(20.0, r.getUpperBound(), EPS);
         assertEquals(10.0, r.getLength(), EPS);
     }
+
     @Test
     void getLength_SmallRange() {
         Range r = new Range(1, 2);
-
         assertEquals(1.0, r.getLength(), EPS);
     }
+
     @Test
     void getLength_DecimalRange() {
         Range r = new Range(0.5, 2.5);
-
         assertEquals(2.0, r.getLength(), EPS);
     }
+
     @Test
     void getLength_DecimalValues() {
         Range r = new Range(1.5, 4.5);
-
         assertEquals(3.0, r.getLength(), EPS);
     }
 
     @Test
     void getLength_NegativeToPositiveRange() {
         Range r = new Range(-3, 7);
-
         assertEquals(10.0, r.getLength(), EPS);
     }
-
 
     //------------------getCentralValue----------------
 
@@ -149,10 +145,10 @@ public class RangeTest {
     void getCentralValue_NormalRange() {
         assertEquals(0.0, exampleRange.getCentralValue(), EPS);
     }
+
     @Test
     void getCentralValue_PositiveRange() {
         Range r = new Range(2, 6);
-
         assertEquals(4.0, r.getCentralValue(), EPS);
     }
 
@@ -173,10 +169,10 @@ public class RangeTest {
         assertTrue(exampleRange.contains(-1.0));
         assertTrue(exampleRange.contains(1.0));
     }
+
     @Test
     void contains_ValueBelowLowerBound() {
         Range r = new Range(5, 10);
-
         assertFalse(r.contains(4));
     }
 
@@ -196,47 +192,50 @@ public class RangeTest {
     void constrain_ValueAboveRange() {
         assertEquals(1.0, exampleRange.constrain(5.0), EPS);
     }
+
     @Test
     void constrain_ValueExactlyLowerBound() {
         Range r = new Range(0, 10);
-
         assertEquals(0.0, r.constrain(0.0), EPS);
     }
+
     @Test
     void constrain_ValueExactlyUpperBound() {
         Range r = new Range(0, 10);
-
         assertEquals(10.0, r.constrain(10.0), EPS);
     }
-    
+
+    //Constrain Test after pit, survived mutants.
     @Test
     void constrain_ValueEqualUpperBound_ShouldReturnUpper() {
+        // Added after PIT to check exact upper bound behavior
         Range r = new Range(2.0, 10.0);
         assertEquals(10.0, r.constrain(10.0));
     }
 
     @Test
     void constrain_ValueEqualLowerBound_ShouldReturnLower() {
+        // Added after PIT to check exact lower bound behavior
         Range r = new Range(2.0, 10.0);
         assertEquals(2.0, r.constrain(2.0));
     }
 
     @Test
     void constrain_ValueAboveUpper_ShouldClampToUpper() {
+        // Added after PIT to ensure values above the range clamp to upper bound
         Range r = new Range(2.0, 10.0);
         assertEquals(10.0, r.constrain(15.0));
     }
 
     @Test
     void constrain_ValueBelowLower_ShouldClampToLower() {
+        // Added after PIT to ensure values below the range clamp to lower bound
         Range r = new Range(2.0, 10.0);
         assertEquals(2.0, r.constrain(-5.0));
     }
 
     //------------------intersects(double,double)-----
 
-  
-    
     @Test
     void intersects_Overlap() {
         assertTrue(exampleRange.intersects(0.5, 2.0));
@@ -246,45 +245,26 @@ public class RangeTest {
     void intersects_NoOverlap() {
         assertFalse(exampleRange.intersects(2.0, 3.0));
     }
-    
+
     @Test
     void intersects_EndEqualsLowerBound_ShouldReturnFalse() {
+        // Added after PIT to test a boundary case in intersects
         Range r = new Range(5.0, 10.0);
         assertFalse(r.intersects(2.0, 5.0));
     }
 
     @Test
     void intersects_StartEqualsUpperBound_ShouldReturnFalse() {
+        // Added after PIT to test when the interval starts exactly at upper bound
         Range r = new Range(0.0, 10.0);
         assertFalse(r.intersects(10.0, 12.0));
     }
 
     @Test
     void intersects_StartGreaterThanUpper_ShouldReturnFalse() {
+        // Added after PIT to test a clearly non-overlapping case above the range
         Range r = new Range(0.0, 10.0);
         assertFalse(r.intersects(11.0, 12.0));
-    }
-    
-    @Disabled
-    @Test
-    void intersects_TouchingBoundary_ShouldReturnTrue() {
-        Range r = new Range(0, 10);
-
-        assertTrue(r.intersects(10, 20));
-    }
-    @Disabled
-    @Test
-    void intersects_FirstParamGreaterThanSecond() {
-        Range r = new Range(0, 10);
-
-        assertFalse(r.intersects(8, 2));
-    }
-    @Disabled
-    @Test
-    void intersects_ReverseParametersOverlap() {
-        Range r = new Range(0, 10);
-
-        assertTrue(r.intersects(8, 3));
     }
 
     //------------------intersects(Range)--------------
@@ -302,10 +282,10 @@ public class RangeTest {
         Range r2 = new Range(20, 30);
         assertFalse(r1.intersects(r2));
     }
+
     @Test
     void intersects_ExactMatch() {
         Range r = new Range(0, 10);
-
         assertTrue(r.intersects(0, 10));
     }
 
@@ -342,30 +322,36 @@ public class RangeTest {
     }
 
     //------------------combineIgnoringNaN-------------
+
     @Test
     void combineIgnoringNaN_FirstNullSecondNaN_ShouldReturnNull() {
+        // Added after PIT to cover the null + NaN-only branch
         Range r2 = new Range(Double.NaN, Double.NaN);
-        assertNull(Range.combineIgnoringNaN(null, r2));
+        Range result = Range.combineIgnoringNaN(null, r2);
+        assertNull(result);
     }
 
     @Test
     void combineIgnoringNaN_SecondNullFirstNaN_ShouldReturnNull() {
+        // Added after PIT to cover the symmetric NaN-only branch
         Range r1 = new Range(Double.NaN, Double.NaN);
         assertNull(Range.combineIgnoringNaN(r1, null));
     }
 
     @Test
     void combineIgnoringNaN_FirstNullSecondValid_ShouldReturnSameObject() {
+        // Added after PIT to ensure a valid range is returned directly
         Range r2 = new Range(2.0, 8.0);
         assertSame(r2, Range.combineIgnoringNaN(null, r2));
     }
 
     @Test
     void combineIgnoringNaN_SecondNullFirstValid_ShouldReturnSameObject() {
+        // Added after PIT to ensure the same valid range object is returned
         Range r1 = new Range(1.0, 5.0);
         assertSame(r1, Range.combineIgnoringNaN(r1, null));
     }
-      
+
     @Test
     void combineIgnoringNaN_WithNaNRange() {
         Range r1 = new Range(Double.NaN, Double.NaN);
@@ -375,6 +361,7 @@ public class RangeTest {
 
         assertEquals(r2, result);
     }
+
     @Test
     void combineIgnoringNaN_SecondNaNRange() {
         Range r1 = new Range(1, 5);
@@ -384,6 +371,7 @@ public class RangeTest {
 
         assertEquals(r1, result);
     }
+
     @Test
     void combineIgnoringNaN_BothValidRanges() {
         Range r1 = new Range(0, 5);
@@ -394,6 +382,7 @@ public class RangeTest {
         assertEquals(0.0, result.getLowerBound(), EPS);
         assertEquals(8.0, result.getUpperBound(), EPS);
     }
+
     @Test
     void combineIgnoringNaN_NormalRanges() {
         Range r1 = new Range(1, 3);
@@ -404,6 +393,7 @@ public class RangeTest {
         assertEquals(1.0, result.getLowerBound(), EPS);
         assertEquals(6.0, result.getUpperBound(), EPS);
     }
+
     @Test
     void combineIgnoringNaN_FirstNull() {
         Range r2 = new Range(2, 8);
@@ -421,6 +411,7 @@ public class RangeTest {
 
         assertEquals(r1, result);
     }
+
     @Test
     void combineIgnoringNaN_FirstLowerSecondLower() {
         Range r1 = new Range(1, 3);
@@ -432,7 +423,7 @@ public class RangeTest {
         assertEquals(7.0, result.getUpperBound(), EPS);
     }
 
-  //------------------expand--------------------------
+    //------------------expand--------------------------
 
     @Test
     void expand_NormalExpansion() {
@@ -442,6 +433,7 @@ public class RangeTest {
         assertEquals(-1.0, expanded.getLowerBound(), EPS);
         assertEquals(11.0, expanded.getUpperBound(), EPS);
     }
+
     @Test
     void expand_NegativeMargin() {
         Range r = new Range(0, 10);
@@ -458,16 +450,16 @@ public class RangeTest {
             Range.expand(null, 0.1, 0.2);
         });
     }
+
     @Test
     void expand_CollapseRange_WhenMarginsTooLarge() {
         Range r = new Range(2, 4);
-
         Range expanded = Range.expand(r, -0.6, -0.6);
 
-        // when margins collapse range, both bounds become the center
         assertEquals(3.0, expanded.getLowerBound(), EPS);
         assertEquals(3.0, expanded.getUpperBound(), EPS);
     }
+
     @Test
     void expand_ZeroMargins_ShouldReturnSameRange() {
         Range r = new Range(2, 6);
@@ -479,15 +471,16 @@ public class RangeTest {
     }
 
     //------------------expandToInclude--------------------------
+
     @Test
     void expandToInclude_ValueEqualUpperBound_ShouldReturnSameObject() {
+        // Added after PIT to check that no new object is created at the boundary
         Range r = new Range(0, 10);
-
         Range result = Range.expandToInclude(r, 10);
-
+        //So added assertSame to make the test stricter.
         assertSame(r, result);
     }
-    
+
     @Test
     void expandToInclude_NullRange_ShouldCreateRange() {
         Range result = Range.expandToInclude(null, 5.0);
@@ -525,6 +518,7 @@ public class RangeTest {
         assertEquals(0.0, result.getLowerBound(), EPS);
         assertEquals(10.0, result.getUpperBound(), EPS);
     }
+
     @Test
     void expandToInclude_ValueEqualLowerBound() {
         Range r = new Range(0, 10);
@@ -544,6 +538,7 @@ public class RangeTest {
         assertEquals(0.0, result.getLowerBound(), EPS);
         assertEquals(10.0, result.getUpperBound(), EPS);
     }
+
     //------------------scale---------------------------
 
     @Test
@@ -574,7 +569,8 @@ public class RangeTest {
         assertEquals(2.0, shifted.getLowerBound(), EPS);
         assertEquals(7.0, shifted.getUpperBound(), EPS);
     }
-    @Disabled
+
+ 
     @Test
     void shift_NoZeroCrossing_ShouldClampAtZero() {
         Range r = new Range(-5, -1);
@@ -584,6 +580,7 @@ public class RangeTest {
         assertEquals(0.0, shifted.getLowerBound(), EPS);
         assertEquals(9.0, shifted.getUpperBound(), EPS);
     }
+
     @Test
     void shift_AllowZeroCrossing() {
         Range r = new Range(-5, -1);
@@ -593,6 +590,7 @@ public class RangeTest {
         assertEquals(5.0, shifted.getLowerBound(), EPS);
         assertEquals(9.0, shifted.getUpperBound(), EPS);
     }
+
     @Test
     void shift_ZeroShift() {
         Range r = new Range(1, 5);
@@ -616,6 +614,7 @@ public class RangeTest {
         Range r = new Range(0, 5);
         assertFalse(r.isNaNRange());
     }
+
     @Test
     void combineIgnoringNaN_BothNaN_ShouldReturnNull() {
         Range r1 = new Range(Double.NaN, Double.NaN);
@@ -643,10 +642,10 @@ public class RangeTest {
 
         assertFalse(r1.equals(r2));
     }
+
     @Test
     void equals_NullObject_ShouldReturnFalse() {
         Range r = new Range(0, 5);
-
         assertFalse(r.equals(null));
     }
 
@@ -661,7 +660,7 @@ public class RangeTest {
     }
 
     //------------------toString------------------------
-    
+
     @Test
     void toString_ShouldContainBounds() {
         Range r = new Range(1, 3);
