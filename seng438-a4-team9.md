@@ -133,7 +133,7 @@ Overall, Selenium is great for its speed, reliability, and ability to automate e
 
 Pair 1: Fatma & Amielle focused on selenium test design and automation & verified the mutation testing (analysis, improving test suites) done by pair 2.
 
-Pair 2: Josral, Faris & Erioluwa Josral focused on mutation testing (analysis, improving test suites) & verified the selenium test design and automation performed by pair 1.
+Pair 2: Josral, Faris & Erioluwa focused on mutation testing (analysis, improving test suites) & verified the selenium test design and automation performed by pair 1.
 
 The lab report was a group effort curated with the efforts of everyone; it was also reviewed before final submission by the whole group.
 # Difficulties encountered, challenges overcome, and lessons learned
