@@ -72,13 +72,13 @@ This highlights that high line coverage does not necessarily imply strong test q
 On the other hand, the DataUtilities test suite has lower line coverage of 51%, but a high test strength 94%, meaning that the tests that do exist are effective at detecting faults.
 
 Thus, 
-Range: Broad coverage but missing some edge-case assertions
+Range: Broad coverage but missing some edge case assertions
 DataUtilities: Fewer tests, but strong fault detection
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
 Equivalent mutants are mutations that do not change the observable behavior of the program. These mutants cannot be killed by any test case, regardless of its quality.
 
-In this experiment, some surviving mutants are likely equivalent mutants. Their presence lowers the mutation score artificially, making the test suite appear weaker than it actually is. This introduces a limitation in mutation testing: 
+In this Lab, some surviving mutants are likely equivalent mutants. Their presence lowers the mutation score artificially, making the test suite appear weaker than it actually is. This introduces a limitation in mutation testing: 
 
 * It is difficult to automatically detect equivalent mutants
 * Manual inspection is often required
@@ -86,11 +86,11 @@ In this experiment, some surviving mutants are likely equivalent mutants. Their 
 
 
 # A discussion of what could have been done to improve the mutation score of the test suites
-To improve mutation scores, several strategies could be applied. First, additional boundary tests should be introduced, particularly focusing on edge values such as inputs that are exactly equal to the minimum or maximum limits. These cases are often where faults occur and are commonly targeted by mutation operators.
+To improve mutation scores, several strategies could be used. First, additional boundary tests should be introduced, particularly focusing on edge values such as inputs that are exactly equal to the minimum or maximum limits. These cases are often where faults occur and are commonly targeted by mutation operators.
 
 Secondly, assertions can be strengthened by using stricter checks, such as assertSame or verifying exact expected values rather than relying on weaker comparisons. This ensures that even subtle deviations in behavior are detected by the test suite.
 
-It is also important to include a wider range of edge cases in testing. This includes scenarios with empty inputs, single element inputs, and negative values, all of which help ensure the robustness of the system under unusual or extreme conditions.
+It is also important to include a wider range of edge cases in testing. This includes scenarios such as empty inputs, single element inputs, and negative values, all of which help ensure the robustness of the system under unusual or extreme conditions.
 
 Another effective approach is to specifically target surviving mutants. By analyzing the mutants that were not killed, new test cases can be designed to address the gaps in the existing test suite and improve its fault-detection capability.
 
@@ -98,9 +98,9 @@ Finally, increasing branch coverage is essential. This involves ensuring that al
 
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
-Mutation testing offers several important advantages when evaluating a test suite. One key benefit is that it measures the quality of the tests, rather than just how much code is executed. Traditional metrics like line coverage only indicate whether code has been run, but mutation testing goes further by checking whether the tests can actually detect faults introduced into the program. In addition, mutation testing helps identify weak or missing test cases. When mutants survive, it signals that certain scenarios or edge cases are not being properly tested, allowing developers to improve their test design. As a result, it contributes to building more robust and reliable test suites, since tests are refined to catch a wider range of potential defects.
+Mutation testing offers many important advantages when evaluating a test suite. One  benefit is that it measures the quality of the tests, rather than just how much code is executed. Traditional metrics like line coverage only indicate whether code has been run, however mutation testing goes further by checking whether the tests can actually detect faults introduced into the program. In addition, mutation testing helps identify weak or missing test cases. When mutants survive, it signals that certain scenarios or edge cases are not being properly tested, allowing developers to improve their test design. Thus, it contributes to building more robust and reliable test suites, since tests are refined to catch a wider range of potential defects.
 
-However, mutation testing also has several disadvantages. One major limitation is that it is computationally expensive, as the system must generate and run a large number of modified versions of the program (mutants), each requiring execution of the full test suite. This can significantly increase testing time and resource usage. Another challenge is the difficulty in detecting equivalent mutants—mutations that do not actually change the program’s behavior. These mutants cannot be killed by any test, yet they still affect the mutation score, making it harder to accurately assess test effectiveness. Finally, mutation testing can produce a very large number of mutants, which can be overwhelming to analyze manually. This makes it time-consuming to review results and determine which surviving mutants indicate real weaknesses in the test suite.
+However, mutation testing also has several disadvantages. One limitation is that it is computationally expensive, as the system must generate and run a large number of modified versions of the program (mutants) each requiring execution of the full test suite. This can significantly increase testing time and resource usage. Another challenge is the difficulty in detecting equivalent mutants mutations that do not actually change the program’s behavior. These mutants cannot be killed by any test, yet they still affect the mutation score making it harder to accurately assess test effectiveness. Lastly, mutation testing can produce a very large number of mutants, which can be overwhelming to analyze manually. This makes it time consuming to review results and determine which surviving mutants indicate real weaknesses in the test suite.
 
 
 # Explain your SELENUIM test case design process
