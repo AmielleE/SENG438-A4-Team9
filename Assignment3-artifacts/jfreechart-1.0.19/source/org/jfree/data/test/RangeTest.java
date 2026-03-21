@@ -16,8 +16,7 @@ public class RangeTest {
         exampleRange = new Range(-1, 1);
     }
 
-    //------------------Constructor--------------------
-
+    //Constructor
     @Test
     void constructor_ValidRange_ShouldCreateRange() {
         Range r = new Range(2.0, 5.0);
@@ -32,7 +31,7 @@ public class RangeTest {
         });
     }
 
-    //------------------getLowerBound------------------
+    //getLowerBound
 
     @Test
     void getLowerBound_ShouldReturnLower() {
@@ -57,8 +56,7 @@ public class RangeTest {
         assertEquals(0.0, r.getLowerBound(), EPS);
     }
 
-    //------------------getUpperBound------------------
-
+    //getUpperBound
     @Test
     void getUpperBound_ShouldReturnUpper() {
         assertEquals(1.0, exampleRange.getUpperBound(), EPS);
@@ -82,7 +80,7 @@ public class RangeTest {
         assertEquals(0.0, r.getUpperBound(), EPS);
     }
 
-    //------------------getLength----------------------
+    //getLength
 
     @Test
     void getLength_NormalRange() {
@@ -139,7 +137,7 @@ public class RangeTest {
         assertEquals(10.0, r.getLength(), EPS);
     }
 
-    //------------------getCentralValue----------------
+    //getCentralValue
 
     @Test
     void getCentralValue_NormalRange() {
@@ -152,7 +150,7 @@ public class RangeTest {
         assertEquals(4.0, r.getCentralValue(), EPS);
     }
 
-    //------------------contains-----------------------
+    //contains
 
     @Test
     void contains_ValueInsideRange() {
@@ -176,7 +174,7 @@ public class RangeTest {
         assertFalse(r.contains(4));
     }
 
-    //------------------constrain----------------------
+    //constrain
 
     @Test
     void constrain_ValueInsideRange() {
@@ -234,8 +232,7 @@ public class RangeTest {
         assertEquals(2.0, r.constrain(-5.0));
     }
 
-    //------------------intersects(double,double)-----
-
+    //intersects(double,double)
     @Test
     void intersects_Overlap() {
         assertTrue(exampleRange.intersects(0.5, 2.0));
@@ -267,7 +264,7 @@ public class RangeTest {
         assertFalse(r.intersects(11.0, 12.0));
     }
 
-    //------------------intersects(Range)--------------
+    //intersects(Range)
 
     @Test
     void intersects_RangeOverlap_ShouldReturnTrue() {
@@ -289,7 +286,7 @@ public class RangeTest {
         assertTrue(r.intersects(0, 10));
     }
 
-    //------------------combine------------------------
+    //combine
 
     @Test
     void combine_BothNull_ShouldReturnNull() {
@@ -321,7 +318,7 @@ public class RangeTest {
         assertEquals(10.0, result.getUpperBound(), EPS);
     }
 
-    //------------------combineIgnoringNaN-------------
+    //combineIgnoringNaN
 
     @Test
     void combineIgnoringNaN_FirstNullSecondNaN_ShouldReturnNull() {
@@ -423,7 +420,7 @@ public class RangeTest {
         assertEquals(7.0, result.getUpperBound(), EPS);
     }
 
-    //------------------expand--------------------------
+    //expand
 
     @Test
     void expand_NormalExpansion() {
@@ -470,7 +467,7 @@ public class RangeTest {
         assertEquals(6.0, result.getUpperBound(), EPS);
     }
 
-    //------------------expandToInclude--------------------------
+    //expandToInclude
 
     @Test
     void expandToInclude_ValueEqualUpperBound_ShouldReturnSameObject() {
@@ -539,7 +536,7 @@ public class RangeTest {
         assertEquals(10.0, result.getUpperBound(), EPS);
     }
 
-    //------------------scale---------------------------
+    //scale
 
     @Test
     void scale_PositiveFactor() {
@@ -559,7 +556,7 @@ public class RangeTest {
         });
     }
 
-    //------------------shift---------------------------
+    //shift
 
     @Test
     void shift_NormalShift() {
@@ -601,7 +598,7 @@ public class RangeTest {
         assertEquals(5.0, shifted.getUpperBound(), EPS);
     }
 
-    //------------------isNaNRange----------------------
+    //isNaNRange
 
     @Test
     void isNaNRange_AllNaN_ShouldReturnTrue() {
@@ -625,7 +622,7 @@ public class RangeTest {
         assertNull(result);
     }
 
-    //------------------equals--------------------------
+    //equals
 
     @Test
     void equals_SameRange() {
@@ -649,7 +646,7 @@ public class RangeTest {
         assertFalse(r.equals(null));
     }
 
-    //------------------hashCode------------------------
+    //hashCode
 
     @Test
     void hashCode_EqualObjectsHaveSameHash() {
@@ -659,7 +656,7 @@ public class RangeTest {
         assertEquals(r1.hashCode(), r2.hashCode());
     }
 
-    //------------------toString------------------------
+    //toString
 
     @Test
     void toString_ShouldContainBounds() {
